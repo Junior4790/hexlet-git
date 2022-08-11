@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const getTest = async () => {
+            return fetch('https://62f3e6e5b81dba4a013e7e52.mockapi.io/test');
+        }
+
+        const createCart = async () => {
+            console.log('createCart');
+            return await getTest().then(res => res);
+
+        }
+
+        const tryToCreateCart = async (attempts = 3) => {
+
+            let res
+
+            let counter = 3
+
+            while (counter > 0) {
+                res = await createCart();
+                console.log(res);
+                counter -= 1
+            }
+
+
+            // if (attempts > 0) {
+            //     console.log(attempts);
+            //     return tryToCreateCart(attempts - 1);
+            // }
+
+             return res;
+
+            // return new Promise((resolve) => {
+            //     resolve(res);
+            //     //setTimeout(() => resolve(res), 0)
+            // });
+        }
+
+        const gg = async () => {
+            const res = await tryToCreateCart();
+            console.log('final', res);
+        }
+
+
+        gg()
+
+
+    </script>
+</body>
+
+</html>
