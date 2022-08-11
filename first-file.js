@@ -1,1 +1,1 @@
-console.log('change after merge branch')
+console.log('conflict commit in main branch')
