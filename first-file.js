@@ -10,3 +10,4 @@ one
 two
 
 feature 1
+feature 2
